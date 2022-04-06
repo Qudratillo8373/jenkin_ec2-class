@@ -22,8 +22,8 @@ node {
         git branch: 'main', url: 'https://github.com/Qudratillo8373/jenkin_ec2-class.git'
     }
 
-    withCredentials([usernamePassword(credentialsId: 'aws-key', passwordVariable: 'AWS_SECRET_ACCESS_KEY', usernameVariable: 'AWS_ACCESS_KEY_ID')]) {
-        withEnv(["AWS_REGION=${vpc_region}"]) {
+    withCredentials([usernamePassword(credentialsId: 'aws-key', passwordVariable: 'AWS_SECRET_ACCESS_KEY', usernameVariable: 'AWS_ACCESS_KEY_ID')])  {
+        withEnv(['AWS_REGION=us-east-1']) {
             stage('Terraform Init'){
                 sh """
                     source ./setenv.sh ${params.environment}.tfvars
