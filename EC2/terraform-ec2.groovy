@@ -26,7 +26,7 @@ node {
         withEnv(['AWS_REGION=us-east-1']) {
             stage('Terraform Init'){
                 sh """
-                    source ./setenv.sh ${params.environment}.tfvars
+                
                     terraform init
                 """
             }
