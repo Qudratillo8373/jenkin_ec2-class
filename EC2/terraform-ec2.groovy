@@ -31,27 +31,27 @@ node {
                 """
             }
 
-//             stage('Terraform Plan'){
-//                 sh """
-//                     terraform plan -var-file ${params.environment}.tfvars
-//                 """
-//             }
+            stage('Terraform Plan'){
+                sh """
+                    terraform plan -var-file ${params.environment}.tfvars
+                """
+            }
 
-//             if(params.action == 'apply'){
-//                 stage('Terraform Apply'){
-//                     sh """
-//                         terraform apply -var-file ${params.environment}.tfvars -auto-approve
-//                     """
-//                 }
-//             }
+            if(params.action == 'apply'){
+                stage('Terraform Apply'){
+                    sh """
+                        terraform apply -var-file ${params.environment}.tfvars -auto-approve
+                    """
+                }
+            }
 
-//             else {
-//                 stage('Terraform Destroy'){
-//                     sh """
-//                         terraform destroy -var-file ${params.environment}.tfvars -auto-approve
-//                     """
-//                 }
-//             }
+            else {
+                stage('Terraform Destroy'){
+                    sh """
+                        terraform destroy -var-file ${params.environment}.tfvars -auto-approve
+                    """
+                }
+            }
         }
     }
 }
