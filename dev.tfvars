@@ -1,5 +1,5 @@
 
-s3_bucket = "elasticbeanstalk-ca-central-1-062967708344"
+s3_bucket = "elasticbeanstalk-us-east-1-062967708344"
 s3_folder_project = "terraform_ec2"
 s3_folder_region = "us-east-1"
 s3_folder_type = "class"
